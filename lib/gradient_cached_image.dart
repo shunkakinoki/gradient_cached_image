@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 
 import 'package:cached_network_image/cached_network_image.dart';
 
-class GradientImage extends StatelessWidget {
-  GradientImage(
+class GradientCachedImage extends StatelessWidget {
+  GradientCachedImage(
       {@required this.image,
       this.height = double.infinity,
       this.width = double.infinity,
