@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
             backgroundColor: Colors.white,
             body: Center(
               child: Container(
-                child: GradientImage(
+                child: GradientCachedImage(
                   height: 300,
                   width: 300,
                   startColor: Colors.lightBlue.withOpacity(0),
