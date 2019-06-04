@@ -2,6 +2,8 @@ library gradient_cached_image;
 
 import 'package:flutter/material.dart';
 
+import 'package:cached_network_image/cached_network_image.dart';
+
 class GradientImage extends StatelessWidget {
   GradientImage(
       {@required this.image,
@@ -28,17 +30,21 @@ class GradientImage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(children: <Widget>[
       Container(
-          height: height,
-          width: width,
-          child: DecoratedBox(
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                fit: fit,
-                image: image,
-              ),
-              // ...
-            ),
-          )),
+        height: height,
+        width: width,
+        child: CachedNetworkImage(
+            imageUrl: image,
+            fit: BoxFit.cover,
+            placeholder: (context, url) => DecoratedBox(
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      fit: BoxFit.cover,
+                      image: AssetImage('assets/images/nikkei.png'),
+                    ),
+                    // ...
+                  ),
+                )),
+      ),
       Container(
         height: height,
         width: width,
